@@ -14,54 +14,6 @@ ANSIBLE_METADATA = {'metadata_version': '1.1',
 
 
 DOCUMENTATION = """
-module: jboss
-version_added: "1.4"
-short_description: deploy applications to JBoss
-description:
-  - Deploy applications to JBoss standalone using the filesystem
-options:
-  deployment:
-    required: true
-    description:
-      - The name of the deployment
-  src:
-    required: false
-    description:
-      - The remote path of the application ear or war to deploy
-  deploy_path:
-    required: false
-    default: /var/lib/jbossas/standalone/deployments
-    description:
-      - The location in the filesystem where the deployment scanner listens
-  state:
-    required: false
-    choices: [ present, absent ]
-    default: "present"
-    description:
-      - Whether the application should be deployed or undeployed
-notes:
-  - "The JBoss standalone deployment-scanner has to be enabled in standalone.xml"
-  - "Ensure no identically named application is deployed through the JBoss CLI"
-author: "Jeroen Hoekx (@jhoekx)"
-"""
-
-EXAMPLES = """
-# Deploy a hello world application
-- jboss:
-    src: /tmp/hello-1.0-SNAPSHOT.war
-    deployment: hello.war
-    state: present
-
-# Update the hello world application
-- jboss:
-    src: /tmp/hello-1.1-SNAPSHOT.war
-    deployment: hello.war
-    state: present
-
-# Undeploy the hello world application
-- jboss:
-    deployment: hello.war
-    state: absent
 
 # Update the hello world application
 - glassfish:
