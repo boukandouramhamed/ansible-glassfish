@@ -5,6 +5,7 @@ A simple module to manage your glassfish server and to also deploy your applicat
 You need only to add the modules to your main modules folder.
 
 ### Examples: 
+```
 - glassfish:     
     asadir: "Path to bin"     
     src: "path to application"     
@@ -12,3 +13,4 @@ You need only to add the modules to your main modules folder.
     server: "target server"
     port: "port"
     state: present
+```
